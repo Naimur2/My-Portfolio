@@ -13,9 +13,8 @@ toggler.addEventListener("click",()=>{
     
 });
 backdrop.addEventListener("click",()=>{
-    
-    mobileNav.classList.add("close");
     mobileNav.classList.remove("open");
+    mobileNav.classList.add("close");
     backdrop.classList.remove("open-backdrop");
     backdrop.classList.add("close-backdrop");
     
