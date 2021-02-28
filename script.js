@@ -31,9 +31,8 @@ let typed = new Typed('.user-qualification', {
 
   
   let offSet=0;
-  window.onscroll = ()=> myFunction();
-
   let mainTop = header.getBoundingClientRect().bottom;
+  window.onscroll = ()=> myFunction();
   const myFunction=()=> {
     if(window.pageYOffset>=mainTop){
         if(header.classList.contains("back-change__backward"))
