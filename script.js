@@ -29,19 +29,37 @@ let typed = new Typed('.user-qualification', {
     showCursor: false,
   });
 
+  
+  let offSet=0;
   window.onscroll = ()=> myFunction();
+
   let mainTop = header.getBoundingClientRect().bottom;
   const myFunction=()=> {
-
     if(window.pageYOffset>=mainTop){
-        header.classList.remove("back-change__backward");
+        if(header.classList.contains("back-change__backward"))
+        {
+            header.classList.remove("back-change__backward");
+        }
+        
+
         header.classList.add("back-change__forward");
         navItems.forEach((item)=> item.classList.add("font-change"));
     }
     else{
-        header.classList.remove("back-change__forward");
-        header.classList.add("back-change__backward");
+        if(header.classList.contains("back-change__forward"))
+        {
+            header.classList.remove("back-change__forward");
+            header.classList.add("back-change__backward");
+        }
+        
         navItems.forEach((item)=> item.classList.remove("font-change"));
     }
+    
 
+  }
+  
+  window.onload=()=>{
+    if(window.pageYOffset>=mainTop){
+            header.classList.add("back-change__forward");
+    }
   }
