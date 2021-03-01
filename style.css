@@ -194,7 +194,7 @@ main {
 }
 
 .mobile-nav__item a {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-decoration: none;
   text-transform: uppercase;
   color: #848689;
@@ -262,7 +262,7 @@ main {
   }
 }
 #about {
-  padding: 3.1rem 0;
+  padding: 5rem 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -294,16 +294,21 @@ main {
 }
 
 .button-user__cv {
-  font-family: inherit;
-  padding: 0.5rem 1rem;
-  margin: auto;
-  font-size: 1rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  background: rgba(223, 217, 217, 0.699);
-  color: #201c1c;
+  display: inline-block;
+  color: #fc604d;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #e0e5ec;
+  margin-top: 20px;
+  border-radius: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 14px;
+  box-shadow: 9px 9px 16px rgb(163 177 198 / 60%),
+    -9px -9px 16px rgb(255 255 255 / 50%);
 }
-
+/* 
 .button-user__cv:hover,
 .button-user__cv:active {
   outline: none;
@@ -313,7 +318,7 @@ main {
 .button-user__cv:focus {
   outline: none;
   overflow: hidden;
-}
+} */
 
 .section-title {
   padding-top: 0.63rem;
@@ -396,7 +401,7 @@ main {
     width: 55%;
   }
   #about {
-    padding: 4rem 0;
+    /* padding: 5rem 0; */
     flex-direction: row;
   }
   .user-image__container {
