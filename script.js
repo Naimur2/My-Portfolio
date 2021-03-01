@@ -9,6 +9,7 @@ toggler.addEventListener("click",()=>{
     mobileNav.classList.remove("close");
     mobileNav.classList.add("open");
     backdrop.classList.remove("close-backdrop");
+    setTimeout(()=>backdrop.classList.add("show"),300);
     backdrop.classList.add("open-backdrop");
     
 });
@@ -17,6 +18,7 @@ backdrop.addEventListener("click",()=>{
     mobileNav.classList.add("close");
     backdrop.classList.remove("open-backdrop");
     backdrop.classList.add("close-backdrop");
+    setTimeout(()=>backdrop.classList.remove("show"),500);
     
 });
 let typed = new Typed('.user-qualification', {
@@ -39,8 +41,6 @@ let typed = new Typed('.user-qualification', {
         {
             header.classList.remove("back-change__backward");
         }
-        
-
         header.classList.add("back-change__forward");
         navItems.forEach((item)=> item.classList.add("font-change"));
     }
@@ -53,8 +53,6 @@ let typed = new Typed('.user-qualification', {
         
         navItems.forEach((item)=> item.classList.remove("font-change"));
     }
-    
-
   }
   
   window.onload=()=>{
