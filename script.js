@@ -9,7 +9,7 @@ toggler.addEventListener("click",()=>{
     mobileNav.classList.remove("close");
     mobileNav.classList.add("open");
     backdrop.classList.remove("close-backdrop");
-    setTimeout(()=>backdrop.classList.add("show"),300);
+   backdrop.classList.add("show");
     backdrop.classList.add("open-backdrop");
     
 });
@@ -49,8 +49,7 @@ let typed = new Typed('.user-qualification', {
         {
             header.classList.remove("back-change__forward");
             header.classList.add("back-change__backward");
-        }
-        
+        }        
         navItems.forEach((item)=> item.classList.remove("font-change"));
     }
   }
