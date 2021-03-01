@@ -48,6 +48,7 @@ main {
   grid-area: main;
   height: auto;
 }
+
 .backdrop {
   display: none;
   opacity: 0;
@@ -161,6 +162,7 @@ main {
   }
 }
 #home {
+  padding: 7.5rem 0;
   max-height: 37.5rem;
   overflow: hidden;
 }
@@ -201,9 +203,7 @@ main {
 .responsive-nav {
   display: none;
 }
-.user {
-  padding: 7.5rem 0;
-}
+
 .user-qualifications {
   font-weight: 700;
   display: flex;
@@ -266,14 +266,14 @@ main {
   flex-direction: column;
   overflow: hidden;
 }
-.user-image__container {
+.about-image__container {
   padding: 0 0.9rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: auto;
 }
-.user-image {
+.about-image {
   margin: auto;
   background: url(./images/user.jpg);
   min-width: 20rem;
@@ -287,12 +287,12 @@ main {
     -9px -9px 16px rgb(255 255 255 / 50%);
 }
 
-.section-details {
+.about-details__container {
   padding: 0 1rem;
   text-align: center;
 }
 
-.button-user__cv {
+.button {
   display: inline-block;
   color: #fc604d;
   padding: 0.63rem 1.25rem;
@@ -303,7 +303,6 @@ main {
   border-radius: 30px;
   margin-left: 0.31rem;
   margin-right: 0.31rem;
-
   font-size: 0.88rem;
   box-shadow: 9px 9px 16px rgb(163 177 198 / 60%),
     -9px -9px 16px rgb(255 255 255 / 50%);
@@ -320,19 +319,24 @@ main {
   overflow: hidden;
 } */
 
-.section-title {
+.about-title {
   padding-top: 1rem;
   margin: 1rem 0;
   font-size: 2rem;
   font-weight: 600;
   color: #fc604d;
 }
-.customer-details {
+.about-description {
+  line-height: 1.6rem;
   margin: 0;
   font-size: 0.9rem;
   padding-bottom: 1rem;
   color: #fc604d;
 }
+.services {
+  padding: 12.5rem 0;
+}
+
 .main-footer {
   grid-area: footer;
   padding: 2rem;
@@ -365,7 +369,6 @@ main {
   .toggle-button {
     display: none;
   }
-
   .user-qualifications {
     font-size: 3rem;
   }
@@ -373,9 +376,6 @@ main {
     margin: 1rem 0;
     font-size: 5rem;
     line-height: 3.5rem;
-  }
-  .user {
-    padding: 200px 0;
   }
   .mouse-animation {
     display: flex;
@@ -396,18 +396,18 @@ main {
       background: transparent;
     }
   }
-  .section-details {
+  .about-details__container {
     text-align: left;
     width: 55%;
   }
   #about {
-    /* padding: 5rem 0; */
+    padding: 12.5rem 0;
     flex-direction: row;
   }
-  .user-image__container {
+  .about-image__container {
     width: 45%;
   }
-  .section-title {
+  .about-title {
     padding-top: 0.63rem;
     line-height: 4.2rem;
     font-size: 3.8rem;
