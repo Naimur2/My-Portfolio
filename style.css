@@ -191,14 +191,14 @@ main {
 }
 .toggle-button i {
   font-size: 2rem;
-  color: rgb(179, 154, 154);
+  color: #fc604d;
 }
 
 .mobile-nav__item a {
   font-size: 1.3rem;
   text-decoration: none;
   text-transform: uppercase;
-  color: #848689;
+  color: #fc604d;
 }
 .responsive-nav {
   display: none;
@@ -209,7 +209,7 @@ main {
   display: flex;
   justify-content: center;
   font-size: 1.5rem;
-  color: rgb(22, 20, 20);
+  color: rgb(0, 0, 0);
 }
 
 .user-title {
@@ -261,7 +261,7 @@ main {
   }
 }
 #about {
-  padding: 5rem 0;
+  padding: 3.75rem 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -307,17 +307,6 @@ main {
   box-shadow: 9px 9px 16px rgb(163 177 198 / 60%),
     -9px -9px 16px rgb(255 255 255 / 50%);
 }
-/* 
-.button-user__cv:hover,
-.button-user__cv:active {
-  outline: none;
-  overflow: hidden;
-  background: #816e6e;
-}
-.button-user__cv:focus {
-  outline: none;
-  overflow: hidden;
-} */
 
 .about-title {
   padding-top: 1rem;
@@ -331,12 +320,55 @@ main {
   margin: 0;
   font-size: 0.9rem;
   padding-bottom: 1rem;
-  color: #fc604d;
+  color: #666;
 }
-.services {
-  padding: 12.5rem 0;
+#services {
+  padding: 5rem 0;
+  text-align: center;
 }
-
+.service-title {
+  color: #653333;
+  font-size: 1.88rem;
+  margin-bottom: 3.75rem;
+  font-weight: 400;
+}
+.service-boxes {
+  padding: 0 1rem;
+}
+.box {
+  width: 100%;
+  padding: 1.25rem;
+  margin-bottom: 1.88rem;
+  box-shadow: 9px 9px 16px rgb(163 177 198 / 60%),
+    -9px -9px 16px rgb(255 255 255 / 50%);
+}
+.box:hover:hover i,
+.box:hover:active i {
+  animation: Up 0.3s ease-out forwards;
+}
+@keyframes Up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-0.5rem);
+  }
+}
+.box i {
+  font-size: 3.125rem;
+  height: 5rem;
+  padding-top: 0.625rem;
+  color: #666;
+}
+.box-title {
+  margin: 1.25rem 0;
+  font-size: 1.125rem;
+  color: #343434;
+}
+.box-description {
+  margin: 0 0 0.625rem 0;
+  color: #666;
+}
 .main-footer {
   grid-area: footer;
   padding: 2rem;
@@ -374,7 +406,7 @@ main {
   }
   .user-title {
     margin: 1rem 0;
-    font-size: 5rem;
+    font-size: 4.7rem;
     line-height: 3.5rem;
   }
   .mouse-animation {
@@ -401,7 +433,7 @@ main {
     width: 55%;
   }
   #about {
-    padding: 12.5rem 0;
+    padding: 5.625rem 0;
     flex-direction: row;
   }
   .about-image__container {
@@ -411,6 +443,20 @@ main {
     padding-top: 0.63rem;
     line-height: 4.2rem;
     font-size: 3.8rem;
+  }
+  .service-title {
+    margin-bottom: 6.25rem;
+  }
+  .box {
+    max-width: 20.4rem;
+    margin: 1rem;
+    padding: 1.9rem;
+  }
+  .service-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
   }
 }
 
