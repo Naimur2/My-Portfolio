@@ -7,18 +7,13 @@ const navItems=document.querySelectorAll(".main-nav__item");
 const mobileNavItem=document.querySelectorAll(".mobile-nav__item>a");
 
 toggler.addEventListener("click",()=>{
-    mobileNav.classList.remove("close");
     mobileNav.classList.add("open");
-    backdrop.classList.remove("close-backdrop");
-    backdrop.classList.add("open-backdrop");
     backdrop.classList.add("show");
-    
+    setTimeout(()=>backdrop.classList.add("open-backdrop"),10);
 });
 const hideMobileNav=()=>{
     mobileNav.classList.remove("open");
-    mobileNav.classList.add("close");
     backdrop.classList.remove("open-backdrop");
-    backdrop.classList.add("close-backdrop");
     setTimeout(()=>backdrop.classList.remove("show"),500);
 }
 backdrop.addEventListener("click",()=>{
@@ -40,28 +35,18 @@ let typed = new Typed('.user-qualification', {
   window.onscroll = ()=> myFunction();
   const myFunction=()=> {
     if(window.pageYOffset>=mainTop){
-        if(header.classList.contains("back-change__backward"))
-        {
-            header.classList.remove("back-change__backward");
-        }
-        header.classList.add("back-change__forward");
         navItems.forEach((item)=> item.classList.add("font-change"));
+        header.classList.add("back-change");
     }
     else{
-        if(header.classList.contains("back-change__forward"))
-        {
-            header.classList.remove("back-change__forward");
-            header.classList.add("back-change__backward");
-        }        
+        header.classList.remove("back-change");
         navItems.forEach((item)=> item.classList.remove("font-change"));
     }
   }
 
-
-
   window.onload=()=>{
     if(window.pageYOffset>=mainTop){
-            header.classList.add("back-change__forward");
+            header.classList.add("back-change");
     }
   }
   
