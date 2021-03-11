@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -23,6 +23,7 @@ body {
     "header"
     "main"
     "footer";
+  row-gap: 1rem;
 }
 main {
   grid-area: main;
@@ -276,20 +277,41 @@ main {
   padding: 5rem 0;
   text-align: center;
 }
-.service-title {
+.section-title {
+  text-align: center;
   color: #653333;
   font-size: 1.88rem;
   margin-bottom: 3.75rem;
   font-weight: 400;
 }
+.section-title::after {
+  display: block;
+  content: "";
+  height: 0.375rem;
+  width: 3.125rem;
+  background: #666;
+  margin: auto;
+  transform: translateY(0.375rem);
+}
+.section-title::before {
+  display: block;
+  content: "";
+  height: 0.125rem;
+  width: 9.38rem;
+  background: #666;
+  margin: auto;
+  transform: translateY(3.5rem);
+}
 .service-boxes {
   padding: 0 1rem;
 }
 .box {
-  width: 100%;
+  flex-basis: 20.4rem;
   padding: 1.25rem;
   margin-bottom: 1.88rem;
   box-shadow: var(--shadow);
+  transform: translateY(0.5rem);
+  transition: transform 0.5s ease-out;
 }
 .box i {
   font-size: 3.125rem;
@@ -326,7 +348,45 @@ main {
   text-align: center;
   color: #fff;
 }
-
+#portfolio {
+  padding: 5.625rem 0;
+}
+.dev-skills__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.dev-skills__column {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.dev-skill__description {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.375rem;
+}
+.dev-skill__description span {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #666;
+  line-height: 1.625rem;
+  text-transform: capitalize;
+}
+.dev-skill__loader {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin-bottom: 1.875rem;
+  height: 0.7rem;
+  background: var(--dark-white);
+  box-shadow: var(--shadow);
+}
+.dev-skill__progress {
+  background: var(--small-text);
+  height: 100%;
+  width: 90%;
+}
 @media (min-width: 50rem) {
   .main-header {
     padding: 1rem 0;
@@ -374,11 +434,10 @@ main {
     line-height: 4.2rem;
     font-size: 3.8rem;
   }
-  .service-title {
+  .section-title {
     margin-bottom: 6.25rem;
   }
   .box {
-    max-width: 20.4rem;
     margin: 1rem;
     padding: 1.9rem;
   }
@@ -387,6 +446,9 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     padding: 0;
+  }
+  .dev-skills__column {
+    width: 50%;
   }
 }
 

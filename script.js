@@ -5,7 +5,7 @@ const main=document.querySelector(".main-container");
 const header=document.querySelector(".main-header");
 const navItems=document.querySelectorAll(".main-nav__item");
 const mobileNavItem=document.querySelectorAll(".mobile-nav__item>a");
-
+const progress=document.querySelectorAll("[class*='prog-']");
 toggler.addEventListener("click",()=>{
     mobileNav.classList.add("open");
     backdrop.classList.add("show");
@@ -42,6 +42,7 @@ let typed = new Typed('.user-qualification', {
         header.classList.remove("back-change");
         navItems.forEach((item)=> item.classList.remove("font-change"));
     }
+    console.dir(header.getBoundingClientRect());
   }
 
   window.onload=()=>{
@@ -50,7 +51,17 @@ let typed = new Typed('.user-qualification', {
     }
   }
   
-
+progress.forEach((item) => {
+    let classList = item.className.split(" ");
+    let re = new RegExp('prog-');
+    let wide="";
+    classList.forEach((cls)=>{
+        if (cls.match(re)) {
+            wide = cls.replace("prog-", "");
+        }
+    });
+    item.style.width=wide+"%";
+});
  const smoothScroll=(targetPosition, duration)=> {
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
@@ -90,3 +101,4 @@ for (let target of data) {
     srollFunc(target);
 }
 
+console.dir(header.getBoundingClientRect());
