@@ -3,9 +3,12 @@ const backdrop=document.querySelector(".backdrop");
 const mobileNav=document.querySelector(".mobile-nav");
 const main=document.querySelector(".main-container");
 const header=document.querySelector(".main-header");
-const navItems=document.querySelectorAll(".main-nav__item");
+const navItems=document.querySelectorAll(".smooth-scroll");
 const mobileNavItem=document.querySelectorAll(".mobile-nav__item>a");
 const progress=document.querySelectorAll("[class*='prog-']");
+const containers=document.querySelectorAll(".container");
+const boxes = document.querySelectorAll(".box");
+
 toggler.addEventListener("click",()=>{
     mobileNav.classList.add("open");
     backdrop.classList.add("show");
@@ -32,7 +35,7 @@ let typed = new Typed('.user-qualification', {
   
   let offSet=0;
   let mainTop = header.getBoundingClientRect().bottom;
-  window.onscroll = ()=> myFunction();
+
   const myFunction=()=> {
     if(window.pageYOffset>=mainTop){
         navItems.forEach((item)=> item.classList.add("font-change"));
@@ -42,9 +45,8 @@ let typed = new Typed('.user-qualification', {
         header.classList.remove("back-change");
         navItems.forEach((item)=> item.classList.remove("font-change"));
     }
-    console.dir(header.getBoundingClientRect());
+    
   }
-
   window.onload=()=>{
     if(window.pageYOffset>=mainTop){
             header.classList.add("back-change");
@@ -101,4 +103,35 @@ for (let target of data) {
     srollFunc(target);
 }
 
-console.dir(header.getBoundingClientRect());
+window.addEventListener("scroll",()=>{
+    myFunction();
+    let pos=window.pageYOffset+89;
+    for (let i = 0; i < containers.length; i++) {
+        if (containers[i].offsetTop <=pos && containers[i+1].offsetTop> pos){
+            let iD=`#${containers[i].id}`
+            let ele=document.querySelector(`a[href='${iD}']`);
+            if (ele.classList.contains("font-change")) {
+                ele.classList.remove("font-change");
+            }
+        }
+        
+    }
+});
+
+const options = {
+
+};
+let observer = new IntersectionObserver((entries,observer)=>{
+    entries.forEach((entry)=>{
+        // entry.target.style.display = 'block';
+        if (entry.isIntersecting){
+            if (!entry.target.classList.contains("animateEle")){
+                entry.target.classList.add("animateEle");
+            }
+        }
+    })
+},options);
+
+boxes.forEach((box)=>{
+    observer.observe(box);
+})

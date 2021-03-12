@@ -5,7 +5,10 @@
 }
 html {
   height: 100%;
+  line-height: 1.6rem; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
+
 :root {
   --shadow: 9px 9px 16px rgb(163 177 198 / 60%),
     -9px -9px 16px rgb(255 255 255 / 50%);
@@ -69,6 +72,9 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 73.5rem;
 }
 
 .main-nav__items {
@@ -291,7 +297,7 @@ main {
   width: 3.125rem;
   background: #666;
   margin: auto;
-  transform: translateY(0.375rem);
+  margin-top: 1.7rem;
 }
 .section-title::before {
   display: block;
@@ -306,12 +312,24 @@ main {
   padding: 0 1rem;
 }
 .box {
+  opacity: 0;
   flex-basis: 20.4rem;
   padding: 1.25rem;
   margin-bottom: 1.88rem;
   box-shadow: var(--shadow);
-  transform: translateY(0.5rem);
-  transition: transform 0.5s ease-out;
+}
+.animateEle {
+  animation: scroll 1s ease-out 0.2s forwards;
+}
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .box i {
   font-size: 3.125rem;
@@ -330,6 +348,7 @@ main {
   color: #343434;
 }
 .box-description {
+  font-size: 0.9rem;
   margin: 0 0 0.625rem 0;
   color: #666;
 }
