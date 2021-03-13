@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import "slider.css";
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 html {
@@ -234,7 +237,7 @@ main {
 }
 .about-image {
   margin: auto;
-  background: url(./images/user.jpg);
+  background: url(../images/user.jpg);
   min-width: 20rem;
   min-height: 20rem;
   background-position: center;
