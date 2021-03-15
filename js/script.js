@@ -123,7 +123,6 @@ const options = {
 };
 let observer = new IntersectionObserver((entries,observer)=>{
     entries.forEach((entry)=>{
-        // entry.target.style.display = 'block';
         if (entry.isIntersecting){
             if (!entry.target.classList.contains("animateEle")){
                 entry.target.classList.add("animateEle");
@@ -135,3 +134,5 @@ let observer = new IntersectionObserver((entries,observer)=>{
 boxes.forEach((box)=>{
     observer.observe(box);
 })
+
+

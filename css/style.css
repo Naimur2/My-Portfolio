@@ -409,6 +409,19 @@ main {
   height: 100%;
   width: 90%;
 }
+.slider {
+  width: 100vw;
+  max-width: 73.5rem;
+  overflow-x: hidden;
+}
+.slider-items {
+  width: 200vw;
+  display: grid;
+  grid-template-columns: repeat(8, 50%);
+}
+.slider-item {
+  padding: 1rem;
+}
 @media (min-width: 50rem) {
   .main-header {
     padding: 1rem 0;
@@ -471,6 +484,10 @@ main {
   }
   .dev-skills__column {
     width: 50%;
+  }
+  .slider-items {
+    display: grid;
+    grid-template-columns: repeat(8, 25%);
   }
 }
 

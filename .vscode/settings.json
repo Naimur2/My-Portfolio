@@ -1,5 +1,6 @@
 {
   "editor.fontSize": 20,
   "editor.fontFamily": "Operator Mono Thin,Fira Code",
-  "files.autoSave": "onFocusChange"
+  "files.autoSave": "onFocusChange",
+  "git.ignoreLimitWarning": true
 }
