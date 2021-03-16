@@ -105,7 +105,7 @@ for (let target of data) {
 
 window.addEventListener("scroll",()=>{
     myFunction();
-    let pos=window.pageYOffset+89;
+    let pos=window.pageYOffset;
     for (let i = 0; i < containers.length; i++) {
         if (containers[i].offsetTop <=pos && containers[i+1].offsetTop> pos){
             let iD=`#${containers[i].id}`

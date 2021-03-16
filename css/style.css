@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-@import "slider.css";
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
 html {
@@ -33,6 +30,10 @@ body {
 }
 main {
   grid-area: main;
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  align-content: center;
+  justify-content: center;
   height: auto;
 }
 
@@ -55,8 +56,6 @@ main {
   opacity: 1;
 }
 .container {
-  margin: 0 auto;
-  padding: 0;
   max-width: 73.5rem;
 }
 .main-header {
@@ -75,6 +74,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
   padding: 0;
   max-width: 73.5rem;
@@ -123,9 +123,11 @@ main {
 }
 
 #home {
-  padding: 7.5rem 0;
-  max-height: 37.5rem;
+  height: 50vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .mobile-nav__items {
   width: 90%;
@@ -223,7 +225,7 @@ main {
   }
 }
 #about {
-  padding: 3.75rem 0;
+  padding: 5rem 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -409,20 +411,31 @@ main {
   height: 100%;
   width: 90%;
 }
-.slider {
-  width: 100vw;
-  max-width: 73.5rem;
-  overflow-x: hidden;
-}
-.slider-items {
-  width: 200vw;
+.work-items {
   display: grid;
-  grid-template-columns: repeat(8, 50%);
+  /* grid-template-columns: repeat(3, 30%); */
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+  /* grid-template-rows: repeat(2, 15rem); */
+  gap: 1rem;
+  /* row-gap: 2rem; */
+  padding-bottom: 5rem;
+  align-items: center;
+  justify-content: center;
 }
-.slider-item {
-  padding: 1rem;
+
+.work-item {
+  height: 100%;
+
+  box-shadow: var(--shadow);
+}
+.work-item img {
+  width: 100%;
+  height: 100%;
 }
 @media (min-width: 50rem) {
+  #home {
+    height: 65vh;
+  }
   .main-header {
     padding: 1rem 0;
   }
@@ -458,7 +471,7 @@ main {
     width: 55%;
   }
   #about {
-    padding: 5.625rem 0;
+    padding: 7rem 0;
     flex-direction: row;
   }
   .about-image__container {
@@ -469,9 +482,7 @@ main {
     line-height: 4.2rem;
     font-size: 3.8rem;
   }
-  .section-title {
-    margin-bottom: 6.25rem;
-  }
+
   .box {
     margin: 1rem;
     padding: 1.9rem;
@@ -484,10 +495,6 @@ main {
   }
   .dev-skills__column {
     width: 50%;
-  }
-  .slider-items {
-    display: grid;
-    grid-template-columns: repeat(8, 25%);
   }
 }
 
