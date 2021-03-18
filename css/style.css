@@ -375,6 +375,9 @@ main {
 #portfolio {
   padding: 5.625rem 0;
 }
+.dev-skill {
+  margin-bottom: 1rem;
+}
 .dev-skills__container {
   display: flex;
   flex-wrap: wrap;
@@ -411,26 +414,92 @@ main {
   height: 100%;
   width: 90%;
 }
+#testimonial {
+  padding: 5rem 0;
+}
 .work-items {
   display: grid;
-  /* grid-template-columns: repeat(3, 30%); */
-  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
-  /* grid-template-rows: repeat(2, 15rem); */
-  gap: 1rem;
-  /* row-gap: 2rem; */
-  padding-bottom: 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
   align-items: center;
   justify-content: center;
 }
-
 .work-item {
-  height: 100%;
-
+  position: relative;
+  cursor: pointer;
   box-shadow: var(--shadow);
 }
-.work-item img {
+.work-image {
+  object-fit: cover;
+  display: block;
   width: 100%;
+}
+.work-overlay {
+  position: absolute;
   height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
+.work-item:hover .work-overlay {
+  transform: scale(0.85);
+  opacity: 1;
+}
+
+#contact {
+  padding: 5rem 0;
+}
+.forms {
+  margin: 0;
+}
+.contact-form {
+  margin: 0 1rem;
+}
+.contact-form input,
+.contact-textarea {
+  outline: none;
+  box-shadow: var(--shadow);
+  border: none;
+  background: var(--dark-white);
+  font-size: 0.9rem;
+  color: #555;
+  font-family: inherit;
+  padding: 25px;
+  border-radius: 25px;
+  margin-bottom: 2rem;
+}
+.contact-name,
+.contact-email {
+  width: 100%;
+  height: 34px;
+}
+
+.form-group {
+  padding: 0;
+}
+
+.contact-textarea {
+  height: 15rem;
+  resize: none;
+  width: 100%;
+}
+.contact-submit {
+  margin: 0 1rem 30px 1rem;
+  font-weight: 600;
+  outline: 0;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
 }
 @media (min-width: 50rem) {
   #home {
@@ -482,7 +551,9 @@ main {
     line-height: 4.2rem;
     font-size: 3.8rem;
   }
-
+  #services {
+    padding: 7rem 0;
+  }
   .box {
     margin: 1rem;
     padding: 1.9rem;
@@ -493,8 +564,26 @@ main {
     justify-content: center;
     padding: 0;
   }
+  #portfolio {
+    padding: 7rem 0;
+  }
   .dev-skills__column {
     width: 50%;
+  }
+  .contact-name,
+  .contact-email {
+    width: 48%;
+  }
+  .contact-textarea {
+    height: 25rem;
+  }
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  .forms {
+    width: 80%;
+    margin: auto;
   }
 }
 

@@ -105,10 +105,17 @@ for (let target of data) {
 
 window.addEventListener("scroll",()=>{
     myFunction();
-    let pos=window.pageYOffset;
-    for (let i = 0; i < containers.length; i++) {
+    let pos=window.pageYOffset+90;
+    for (let i = 0; i < containers.length-1; i++) {
         if (containers[i].offsetTop <=pos && containers[i+1].offsetTop> pos){
             let iD=`#${containers[i].id}`
+            let ele=document.querySelector(`a[href='${iD}']`);
+            if (ele.classList.contains("font-change")) {
+                ele.classList.remove("font-change");
+            }
+        }
+        else if(containers[containers.length-1].offsetTop <=pos){
+            let iD=`#${containers[containers.length-1].id}`
             let ele=document.querySelector(`a[href='${iD}']`);
             if (ele.classList.contains("font-change")) {
                 ele.classList.remove("font-change");
@@ -136,3 +143,67 @@ boxes.forEach((box)=>{
 })
 
 
+var openPhotoSwipe = function() {
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+
+    // build items array
+    var items = [
+        {
+            src: '../images/1.jpg',
+            w: 800,
+            h: 600
+        },
+        {
+            src: '../images/2.jpg',
+            w: 800,
+            h: 600
+        },
+        {
+            src: '../images/3.jpg',
+            w: 800,
+            h: 600
+        },
+        {
+            src: '../images/4.jpg',
+            w: 800,
+            h: 600
+        },
+        {
+            src: '../images/5.jpg',
+            w: 800,
+            h: 600
+        },
+        {
+            src: '../images/6.jpg',
+            w: 800,
+            h: 600
+        },
+
+        
+    ];
+    
+    // define options (if needed)
+    var opt = {
+			 // history & focus options are disabled on CodePen        
+      	history: false,
+        bgOpacity:0.8,
+      	focus: false,
+        closeOnScroll:false,
+        showAnimationDuration: 0,
+        hideAnimationDuration: 0,
+        maxSpreadZoom :1
+        
+    };
+    
+    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, opt);
+    gallery.init();
+};
+
+
+
+const works=document.querySelectorAll('.work-item');
+
+
+works.forEach((item)=>{
+    item.addEventListener("click",openPhotoSwipe);
+});
